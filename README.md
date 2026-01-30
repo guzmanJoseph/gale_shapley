@@ -1,4 +1,4 @@
-# gale_shapley
+# Matching and Verifying Assignment (Gale Shapley Algorithm)
 
 Joseph Guzman - 69641535 <br>
 Charles Durkin - 
