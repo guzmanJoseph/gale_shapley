@@ -1,11 +1,11 @@
 import sys
 
 def main():
-    print("RUNNING")
+    # Reads the input
     lines = open(sys.argv[1]).readlines()
     n = int(lines[0])
 
-    # Preferences (1-based indexing)
+    # Preferences 
     hospital_preferences = [[] for i in range(n + 1)]
     student_preferences = [[] for i in range(n + 1)]
 
@@ -15,7 +15,7 @@ def main():
     for i in range(1, n + 1):
         student_preferences[i] = list(map(int, lines[n + i].split()))
 
-    # rank[s][h] = how much student s prefers hospital h (lower is better)
+    # How much student s prefers hospital h 
     rank = [[0] * (n + 1) for i in range(n + 1)]
     for s in range(1, n + 1):
         for r, h in enumerate(student_preferences[s]):
@@ -45,7 +45,7 @@ def main():
             else:
                 free_hospitals.append(h)
 
-    # Output result
+    # Output
     for h in range(1, n + 1):
         print(h, hospital_match[h])
 
