@@ -4,7 +4,8 @@ import subprocess
 import sys
 import tempfile
 import time
-from statistics import median
+
+import matplotlib.pyplot as plt
 
 # Generate numbers to test
 NS = [2**x for x in range(0, 10)]
@@ -82,6 +83,23 @@ def main():
             verify_times.append(verify_time)
 
             print(f"n={n} match={match_time:.6f}s verify={verify_time:.6f}s")
+
+    # Plot
+    plt.figure()
+    plt.plot(NS, match_times, marker="o")
+    plt.xlabel("n")
+    plt.ylabel("Time (seconds)")
+    plt.title("Matching Engine Runtime")
+    plt.grid(True)
+    plt.savefig("data/matching_runtime.png")
+
+    plt.figure()
+    plt.plot(NS, verify_times, marker="o")
+    plt.xlabel("n")
+    plt.ylabel("Time (seconds)")
+    plt.title("Verifier Runtime")
+    plt.grid(True)
+    plt.savefig("data/verifier_runtime.png")
 
 
 if __name__ == "__main__":
