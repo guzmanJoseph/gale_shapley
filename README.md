@@ -1,7 +1,7 @@
 # Matching and Verifying Assignment (Gale Shapley Algorithm)
 
 Joseph Guzman - 69641535 <br>
-Charles Durkin - 
+Charles Durkin - 78577729
 
 How to run Task A: py src/matching_engine.py tests/example.in
 
